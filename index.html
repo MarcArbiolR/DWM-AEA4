@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Registre de Camps de Cultiu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1> Registre de Camps de Cultiu</h1>
+
+    <form id="form-camp">
+      <div class="form-row">
+        <input type="text" id="input-nom" placeholder="Nom del camp" required>
+        <input type="number" id="input-hectarees" placeholder="Hectàrees" step="0.01" min="0" required>
+      </div>
+      <div class="form-row">
+        <select id="input-cultiu" required>
+          <option value="">Tipus de cultiu</option>
+          <option value="blat">Blat</option>
+          <option value="ordi">Ordi</option>
+          <option value="civada">Civada</option>
+          <option value="blat de moro">Blat de moro</option>
+          <option value="tomàquet">Tomàquet</option>
+          <option value="pebrot">Pebrot</option>
+          <option value="patata">Patata</option>
+          <option value="olivera">Olivera</option>
+          <option value="vinya">Vinya</option>
+          <option value="altres">Altres</option>
+        </select>
+        <input type="date" id="input-data-sembra" required>
+      </div>
+      <div class="form-row">
+        <select id="input-reg" required>
+          <option value="">Sistema de reg</option>
+          <option value="goteig">Goteig</option>
+          <option value="aspersió">Aspersió</option>
+          <option value="inundació">Inundació</option>
+          <option value="pluja">Només pluja</option>
+        </select>
+        <input type="text" id="input-ubicacio" placeholder="Ubicació" required>
+      </div>
+      <textarea id="input-notes" placeholder="Notes addicionals..." rows="2"></textarea>
+      <button type="submit">➕ Registrar Camp</button>
+    </form>
+
+    <div id="llista-camps"></div>
+
+    <p class="info">
+      Els registres es guarden a Firebase Firestore.
+    </p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
