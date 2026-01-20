@@ -88,7 +88,7 @@ Este proyecto está disponible bajo la licencia MIT.
 
 ## Autor
 
-Marc Arbiol Ríos
+Marc Arbiol Rams
 
 ## Contacto
 
